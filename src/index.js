@@ -7,9 +7,14 @@ ReactDOM.render(
     // <App />, document.getElementById('root')
     <div>
         <MyComp />
+        <hr />
         <MyComp />
+        <hr />
         <MyComp />
+        <hr />
         <MyComp />
+        <hr />
         <MyComp />
+        <hr />
     </div>, document.querySelector("#root")
 );
