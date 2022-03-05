@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
-import MyComp from './MyComp';
+// import MyComp from './MyComp';
+import Todo from './Todo';
 
 ReactDOM.render(
     // <App />, document.getElementById('root')
     <div>
-        <MyComp />
+        {/* <MyComp />
         <hr />
         <MyComp />
         <hr />
@@ -15,6 +16,7 @@ ReactDOM.render(
         <MyComp />
         <hr />
         <MyComp />
-        <hr />
+        <hr /> */}
+        <Todo/>
     </div>, document.querySelector("#root")
 );
