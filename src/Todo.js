@@ -1,5 +1,6 @@
 import React from "react";
 import './Todo.css';
+import List from "./List";
 class Todo extends React.Component{
     state = {
         input : ["make coffee", "make notice", "dance class"],
@@ -17,7 +18,7 @@ class Todo extends React.Component{
                     }
                 }
                 onKeyDown = {(e) =>{
-                    if(e.key == "Enter"){
+                    if(e.key === "Enter"){
                         this.setState({
                             input : [...this.state.input, this.state.curr],
                             curr : ""
@@ -27,25 +28,9 @@ class Todo extends React.Component{
                 value = {this.state.curr}
                 
                 />
-                <ul>
-                    {
-                        this.state.input.map((element) =>{
-                            return <li>{element}
-                            </li>
-                        })
-                    }
-                    {/* {
-                        this.state.input.filter((element) =>{
-                            if(ondblclick){
-                                return false;
-                            }
-                            return true;
-                        })
-                    } */}
-                </ul>
+                <List input = {this.state.input} />
             </div>
         )
     }
 }
-
 export default Todo;
