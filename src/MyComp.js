@@ -32,7 +32,7 @@ class MyComp extends React.Component{
                         this.setState({num : this.state.num - 1})
                     }
                 }>
-                    i'll decrement number
+                    i'lll decrement number
                 </button>
             </div>
         );
