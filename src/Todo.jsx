@@ -6,6 +6,14 @@ class Todo extends React.Component{
         input : ["make coffee", "make notice", "dance class"],
         curr : ""
     }
+
+    handledelete = (singleTask) => {
+        let currentinput = this.state.input;
+        let filterTodo = currentinput.filter((element) => {
+            return element !== singleTask;
+        })
+        this.setState({input:filterTodo});
+    }
     render = () => {
         return(
             <div>
@@ -28,7 +36,7 @@ class Todo extends React.Component{
                 value = {this.state.curr}
                 
                 />
-                <List input = {this.state.input} />
+                <List input = {this.state.input} deleteTask = {this.handledelete}/>
             </div>
         )
     }

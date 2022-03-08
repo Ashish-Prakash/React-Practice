@@ -13,6 +13,12 @@ let List = (props) =>{
                             this.setState({input : filterTodo})
                         }
                     }> Delete</button> */}
+
+                    <button onClick={
+                        () =>{
+                            props.deleteTask(element);
+                        }
+                    }>Delete</button>
                     </li>
                 })
             }
