@@ -1,12 +1,24 @@
 import React from "react";
 import './Todo.css';
 import List from "./List";
+import Input from "./Input";
+
 class Todo extends React.Component{
     state = {
         input : ["make coffee", "make notice", "dance class"],
         curr : ""
     }
-
+    handlecurrent = (currentInput) => {
+        this.setState({
+            curr : currentInput
+        })
+    }
+    handlestate = () => {
+        this.setState({
+            input : [...this.state.input, this.state.curr],
+            curr : ""
+        })
+    }
     handledelete = (singleTask) => {
         let currentinput = this.state.input;
         let filterTodo = currentinput.filter((element) => {
@@ -17,23 +29,8 @@ class Todo extends React.Component{
     render = () => {
         return(
             <div>
-                <input type= "text" placeholder="Write Todo and Press Enter !!!" onChange={
-                    (e) =>{
-                        this.setState({
-                            curr : e.currentTarget.value
-                        })    
-                    }
-                }
-                onKeyDown = {(e) =>{
-                    if(e.key === "Enter"){
-                        this.setState({
-                            input : [...this.state.input, this.state.curr],
-                            curr : ""
-                        })
-                    }
-                }}
-                value = {this.state.curr}
-                />
+                
+                <Input handlecurrent = {this.handlecurrent} handlestate = {this.handlestate} curr = {this.state.curr} />
                 <List input = {this.state.input} deleteTask = {this.handledelete}/>
             </div>
         )

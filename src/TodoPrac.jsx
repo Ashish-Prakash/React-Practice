@@ -1,7 +1,7 @@
 import React from "react";
 
 class TodoPrac extends React.Component{
-    state ={
+    state = {
         tasks : ["hooo","hell"],
         curr : ""
     }
