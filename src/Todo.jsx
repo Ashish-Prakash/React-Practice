@@ -21,8 +21,7 @@ class Todo extends React.Component{
                     (e) =>{
                         this.setState({
                             curr : e.currentTarget.value
-                        })
-                        
+                        })    
                     }
                 }
                 onKeyDown = {(e) =>{
@@ -34,7 +33,6 @@ class Todo extends React.Component{
                     }
                 }}
                 value = {this.state.curr}
-                
                 />
                 <List input = {this.state.input} deleteTask = {this.handledelete}/>
             </div>
